@@ -16,14 +16,18 @@ function App() {
   async function handleSubmit(e) {
     if (rating === 0) {
       const errorToast = () =>
-        toast.error("Please select a rating before submitting.");
+        toast.error("Please select a rating before submitting.", {
+          duration: 1000,
+        });
       errorToast();
       return;
     }
     e.preventDefault();
     if (!feedback.trim()) {
       const errorToast = () =>
-        toast.error("Please enter your feedback before submitting.");
+        toast.error("Please enter your feedback before submitting.", {
+          duration: 1000,
+        });
       errorToast();
       return;
     }
@@ -32,19 +36,23 @@ function App() {
     setLoading(false);
     setFeedback("");
     const successToast = () =>
-      toast.success("Feedback submitted successfully!");
+      toast.success("Feedback submitted successfully!", { duration: 1000 });
     successToast();
   }
   return (
     <div className="app">
+      <Rating rating={rating} setRating={setRating} />
       <FeedbackForm
         feedback={feedback}
         setFeedback={setFeedback}
         loading={loading}
         setLoading={setLoading}
       />
-      <Rating rating={rating} setRating={setRating} />
-      <button onClick={handleSubmit} disabled={loading}>
+      <button
+        className="submit-button"
+        onClick={handleSubmit}
+        disabled={loading}
+      >
         {loading ? "Submitting..." : "Submit"}
       </button>
     </div>
