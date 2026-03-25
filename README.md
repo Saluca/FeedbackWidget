@@ -1,16 +1,19 @@
-# React + Vite
+# Feedback and Star Rating Widget - Vite + React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- A lightweight review component built with Vite + React. Users can select a star rating and submit a short written review.
+- Both star rating and review/feedback text are controlled state. Submission is only enabled when both have been filled, so neither can be submitted alone.
+- Added Toast notifications for error/submission feedback rather than inline or alert messages, keeping the UI clean and user friendly.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```
+npm install
+npm run dev
+```
 
-## React Compiler
+Runs at : `http://localhost:5173`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Future additions:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Persist reviews
+- Write tests for validation logic
