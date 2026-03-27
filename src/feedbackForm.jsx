@@ -1,7 +1,5 @@
-import Rating from "./starRating.jsx";
 import { Toaster } from "react-hot-toast";
 import "./App.css";
-import { IconDeviceComputerCamera } from "@tabler/icons-react";
 
 function FeedbackForm({ feedback, setFeedback, loading }) {
   return (
